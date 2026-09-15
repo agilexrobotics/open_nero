@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="dual_nero">
+    
+<xacro:include filename="$(find open_nero_description)/urdf/open_nero_description.urdf"/>
+<xacro:include filename="$(find open_nero_description)/urdf/nero_gripper_d435.urdf"/>
+<xacro:include filename="$(find open_nero_description)/urdf/test_d435_camera.urdf.xacro"/>
+
+
+<xacro:agx_arm prefix="left_" />
+<xacro:agx_arm prefix="right_" />
+
+
+<joint name="left_arm_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_arm_base"/>
+    <origin xyz="-0.002 0.1 0.59" rpy="-1.57 -1.57 0.0"/>
+</joint>
+
+<joint name="right_arm_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_arm_base"/>
+    <origin xyz="-0.002 -0.1 0.59" rpy="1.57 -1.57 0.0"/>
+</joint>
+
+<joint name="top_camera_joint" type="fixed">
+    <parent link="top_camera_stand_Link"/>
+    <child link="top_d435_camera_link"/>
+    <origin xyz="-0.0124 0.0 -0.04" rpy="0.0 1.57 0.0"/>
+</joint>
+
+
+
+</robot>

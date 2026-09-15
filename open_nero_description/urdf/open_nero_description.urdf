@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="open_nero_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0592395620981769 -0.068642440505388 0.0562764736144042"
+        rpy="0 0 0" />
+      <mass
+        value="4.46524857458863" />
+      <inertia
+        ixx="0.0608289280191989"
+        ixy="-2.54649959130438E-06"
+        ixz="1.11851948046933E-07"
+        iyy="0.0218722514454004"
+        iyz="-0.000689477252402357"
+        izz="0.0680524540174318" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://open_nero_description/meshes/base_link_v2.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://open_nero_description/meshes/base_link_v2.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="top_camera_stand_Link">
+    <inertial>
+      <origin
+        xyz="0.0166419912756578 6.93889390390723E-18 -0.0192874146389437"
+        rpy="0 0 0" />
+      <mass
+        value="0.00531091408330161" />
+      <inertia
+        ixx="4.65820593908766E-06"
+        ixy="9.48522319311586E-22"
+        ixz="-4.18608407788093E-08"
+        iyy="9.5244387196321E-07"
+        iyz="1.81889414850786E-21"
+        izz="4.06661561438356E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://open_nero_description/meshes/camera_stand_link.dae" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://open_nero_description/meshes/camera_stand_link.dae" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_camera_stand_joint"
+    type="revolute">
+    <origin
+      xyz="0.067 0 0.642"
+      rpy="0 -0.5445 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="top_camera_stand_Link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit lower="0.0" upper="3.14" effort="10.0" velocity="1.0"/>
+      
+  </joint>
+</robot>
